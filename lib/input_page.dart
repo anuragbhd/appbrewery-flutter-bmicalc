@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'reusable_card.dart';
 
+const ACTIVE_CARD_COLOR = Color(0xFF1D1E33);
+const BOTTOM_BAR_HEIGHT = 80.0;
+const BOTTOM_BAR_COLOR = Color(0xFFEA1556);
+
 class InputPage extends StatefulWidget {
   @override
   _InputPageState createState() => _InputPageState();
@@ -21,12 +25,12 @@ class _InputPageState extends State<InputPage> {
                 children: <Widget>[
                   Expanded(
                     child: ReusableCard(
-                      color: Color(0xFF1D1E33),
+                      color: ACTIVE_CARD_COLOR,
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
-                      color: Color(0xFF1D1E33),
+                      color: ACTIVE_CARD_COLOR,
                     ),
                   ),
                 ],
@@ -34,7 +38,7 @@ class _InputPageState extends State<InputPage> {
             ),
             Expanded(
               child: ReusableCard(
-                color: Color(0xFF1D1E33),
+                color: ACTIVE_CARD_COLOR,
               ),
             ),
             Expanded(
@@ -42,22 +46,22 @@ class _InputPageState extends State<InputPage> {
                 children: <Widget>[
                   Expanded(
                     child: ReusableCard(
-                      color: Color(0xFF1D1E33),
+                      color: ACTIVE_CARD_COLOR,
                     ),
                   ),
                   Expanded(
                     child: ReusableCard(
-                      color: Color(0xFF1D1E33),
+                      color: ACTIVE_CARD_COLOR,
                     ),
                   ),
                 ],
               ),
             ),
             Container(
-              color: Color(0xFFEA1556),
+              color: BOTTOM_BAR_COLOR,
               margin: EdgeInsets.only(top: 10.0),
               width: double.infinity,
-              height: 80.0,
+              height: BOTTOM_BAR_HEIGHT,
             ),
           ],
         ),
