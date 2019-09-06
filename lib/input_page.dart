@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'icon_content.dart';
+import 'gender.dart';
 
 const ACTIVE_CARD_COLOR = Color(0xFF1D1E33);
+const INACTIVE_CARD_COLOR = Color(0xFF111328);
 const BOTTOM_BAR_HEIGHT = 80.0;
 const BOTTOM_BAR_COLOR = Color(0xFFEA1556);
 
@@ -13,6 +15,8 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  Gender selectedGender;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,20 +30,34 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: ReusableCard(
-                      color: ACTIVE_CARD_COLOR,
-                      cardChild: IconContent(
-                        icon: FontAwesomeIcons.mars,
-                        content: 'MALE',
+                    child: GestureDetector(
+                      onTap: () => this.setState(() {
+                        this.selectedGender = Gender.male;
+                      }),
+                      child: ReusableCard(
+                        color: this.selectedGender == Gender.male
+                            ? ACTIVE_CARD_COLOR
+                            : INACTIVE_CARD_COLOR,
+                        cardChild: IconContent(
+                          icon: FontAwesomeIcons.mars,
+                          content: 'MALE',
+                        ),
                       ),
                     ),
                   ),
                   Expanded(
-                    child: ReusableCard(
-                      color: ACTIVE_CARD_COLOR,
-                      cardChild: IconContent(
-                        icon: FontAwesomeIcons.venus,
-                        content: 'FEMALE',
+                    child: GestureDetector(
+                      onTap: () => this.setState(() {
+                        this.selectedGender = Gender.female;
+                      }),
+                      child: ReusableCard(
+                        color: this.selectedGender == Gender.female
+                            ? ACTIVE_CARD_COLOR
+                            : INACTIVE_CARD_COLOR,
+                        cardChild: IconContent(
+                          icon: FontAwesomeIcons.venus,
+                          content: 'FEMALE',
+                        ),
                       ),
                     ),
                   ),
