@@ -30,34 +30,30 @@ class _InputPageState extends State<InputPage> {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    child: GestureDetector(
+                    child: ReusableCard(
                       onTap: () => this.setState(() {
                         this.selectedGender = Gender.male;
                       }),
-                      child: ReusableCard(
-                        color: this.selectedGender == Gender.male
-                            ? ACTIVE_CARD_COLOR
-                            : INACTIVE_CARD_COLOR,
-                        cardChild: IconContent(
-                          icon: FontAwesomeIcons.mars,
-                          content: 'MALE',
-                        ),
+                      color: this.selectedGender == Gender.male
+                          ? ACTIVE_CARD_COLOR
+                          : INACTIVE_CARD_COLOR,
+                      cardChild: IconContent(
+                        icon: FontAwesomeIcons.mars,
+                        content: 'MALE',
                       ),
                     ),
                   ),
                   Expanded(
-                    child: GestureDetector(
+                    child: ReusableCard(
                       onTap: () => this.setState(() {
                         this.selectedGender = Gender.female;
                       }),
-                      child: ReusableCard(
-                        color: this.selectedGender == Gender.female
-                            ? ACTIVE_CARD_COLOR
-                            : INACTIVE_CARD_COLOR,
-                        cardChild: IconContent(
-                          icon: FontAwesomeIcons.venus,
-                          content: 'FEMALE',
-                        ),
+                      color: this.selectedGender == Gender.female
+                          ? ACTIVE_CARD_COLOR
+                          : INACTIVE_CARD_COLOR,
+                      cardChild: IconContent(
+                        icon: FontAwesomeIcons.venus,
+                        content: 'FEMALE',
                       ),
                     ),
                   ),
