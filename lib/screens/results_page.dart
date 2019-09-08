@@ -6,6 +6,8 @@ import 'package:bmi_calculator/components/bottom_button.dart';
 class ResultsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Map<String, String> args = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI RESULTS'),
@@ -32,15 +34,15 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Text(
-                    'NORMAL',
+                    args['result'].toUpperCase(),
                     style: kResultTextStyle,
                   ),
                   Text(
-                    '18.3',
+                    args['bmi'],
                     style: kBMITextStyle,
                   ),
                   Text(
-                    'Your BMI is quite low, you should eat more!',
+                    args['interpretation'],
                     style: kBodyTextStyle,
                     textAlign: TextAlign.center,
                   ),
