@@ -3,6 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'icon_content.dart';
 import 'round_icon_button.dart';
+import 'bottom_button.dart';
 import 'gender.dart';
 import 'constants.dart';
 
@@ -194,21 +195,9 @@ class _InputPageState extends State<InputPage> {
                 ],
               ),
             ),
-            Container(
-              color: kBottomBarColor,
-              margin: EdgeInsets.only(top: 10.0),
-              padding: EdgeInsets.only(bottom: 20.0),
-              width: double.infinity,
-              height: kBottomBarHeight,
-              child: GestureDetector(
-                child: Center(
-                  child: Text(
-                    'CALCULATE',
-                    style: kBottomBarTextStyle,
-                  ),
-                ),
-                onTap: () => Navigator.pushNamed(context, '/results'),
-              ),
+            BottomButton(
+              title: 'CALCULATE',
+              onTap: () => Navigator.pushNamed(context, '/results'),
             ),
           ],
         ),
