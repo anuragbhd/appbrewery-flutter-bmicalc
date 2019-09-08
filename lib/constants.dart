@@ -15,6 +15,10 @@ const kBigTextStyle = TextStyle(
 // Bottom bar
 const kBottomBarHeight = 80.0;
 const kBottomBarColor = Color(0xFFEA1556);
+const kBottomBarTextStyle = TextStyle(
+  fontSize: 25.0,
+  fontWeight: FontWeight.bold,
+);
 
 // Height tile
 const kMinHeight = 120.0;
