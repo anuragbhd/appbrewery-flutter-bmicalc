@@ -12,6 +12,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
+  int height = 180;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,7 @@ class _InputPageState extends State<InputPage> {
       ),
       body: Center(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             Expanded(
               child: Row(
@@ -59,6 +61,40 @@ class _InputPageState extends State<InputPage> {
             Expanded(
               child: ReusableCard(
                 color: kActiveCardColor,
+                cardChild: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(
+                      'HEIGHT',
+                      style: kContentTextStyle,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.baseline,
+                      textBaseline: TextBaseline.alphabetic,
+                      children: <Widget>[
+                        Text(
+                          this.height.toString(),
+                          style: kBigTextStyle,
+                        ),
+                        Text(
+                          'cm',
+                          style: kContentTextStyle,
+                        )
+                      ],
+                    ),
+                    Slider(
+                      value: this.height.toDouble(),
+                      min: kMinHeight,
+                      max: kMaxHeight,
+                      activeColor: kSliderActiveColor,
+                      inactiveColor: kSliderInactiveColor,
+                      onChanged: (double newValue) => this.setState(() {
+                        this.height = newValue.round();
+                      }),
+                    ),
+                  ],
+                ),
               ),
             ),
             Expanded(
